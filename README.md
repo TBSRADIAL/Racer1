@@ -5,7 +5,7 @@ Sitio informativo sobre el mundo de la Fórmula 1: escuderías, reglamento, cale
 ## Demo
 
 Una vez publicado con GitHub Pages, el sitio queda disponible en:
-`https://<tu-usuario>.github.io/<nombre-del-repo>/`
+https://tbsradial.github.io/Racer1/
 
 ## Tecnologías utilizadas
 
