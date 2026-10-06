@@ -1,0 +1,35 @@
+// ==========================================================================
+// Footer — pie de página con copyright y redes sociales
+// ==========================================================================
+
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.pie-pagina {
+    @include flex(column, flex-start, center, 1rem);
+    margin-top: 1rem;
+    padding: 2rem;
+    background-color: $color-superficie;
+    text-align: center;
+
+    .copyright {
+        font-size: 0.9rem;
+    }
+
+    .redes {
+        @include flex(row, center, center, 1.2rem);
+        flex-wrap: wrap;
+        list-style: none;
+    }
+
+    .enlace-red {
+        font-family: $fuente-titulos;
+        font-weight: 600;
+        @include transicion(color);
+
+        &:hover,
+        &:focus {
+            color: $color-acento;
+        }
+    }
+}

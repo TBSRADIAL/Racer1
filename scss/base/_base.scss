@@ -1,0 +1,27 @@
+// ==========================================================================
+// Base — reset y estilos globales a etiquetas
+// ==========================================================================
+
+@use "../utilities/variables" as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $color-primario;
+    color: $color-secundario;
+    font-family: $fuente-texto;
+    line-height: 1.6;
+}
+
+a {
+    color: $color-acento;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

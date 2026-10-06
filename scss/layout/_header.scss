@@ -1,0 +1,12 @@
+// ==========================================================================
+// Header — marca / logo
+// ==========================================================================
+
+@use "../utilities/variables" as *;
+
+.navbar-brand.marca {
+    font-family: $fuente-titulos;
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: $color-secundario;
+}

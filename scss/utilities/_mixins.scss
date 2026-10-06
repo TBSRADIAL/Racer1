@@ -1,0 +1,20 @@
+// ==========================================================================
+// Mixins reutilizables
+// ==========================================================================
+
+// Transición corta y consistente para estados :hover / :focus / :active
+@mixin transicion($propiedad: all, $duracion: 0.2s) {
+    transition: $propiedad $duracion ease;
+}
+
+// Contenedor flex reutilizable (navbar, footer, listas de iconos)
+@mixin flex($direccion: row, $justificar: flex-start, $alinear: center, $espacio: null) {
+    display: flex;
+    flex-direction: $direccion;
+    justify-content: $justificar;
+    align-items: $alinear;
+
+    @if $espacio {
+        gap: $espacio;
+    }
+}

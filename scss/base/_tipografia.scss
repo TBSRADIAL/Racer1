@@ -1,0 +1,26 @@
+// ==========================================================================
+// Tipografía — clases de títulos y texto reutilizadas en las 5 páginas
+// ==========================================================================
+
+@use "../utilities/variables" as *;
+
+.titulo-seccion {
+    font-family: $fuente-titulos;
+    font-weight: 700;
+    font-size: 1.8rem;
+
+    @media (max-width: 600px) {
+        font-size: 1.4rem;
+    }
+}
+
+.texto {
+    font-size: 1.05rem;
+}
+
+.titulo-tarjeta {
+    font-family: $fuente-titulos;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: $color-acento;
+}

@@ -1,0 +1,28 @@
+// ==========================================================================
+// Buttons — botón propio (.btn-boton) sobre la base de Bootstrap
+// ==========================================================================
+
+@use "../utilities/variables" as *;
+
+.btn-boton {
+    display: inline-block;
+    background-color: $color-acento;
+    color: $color-texto-oscuro;
+    font-family: $fuente-titulos;
+    font-weight: 600;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    margin-top: 1rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+
+    &:hover,
+    &:focus {
+        background-color: $color-acento-claro;
+        color: $color-texto-oscuro;
+    }
+
+    &:active {
+        transform: scale(0.97);
+    }
+}

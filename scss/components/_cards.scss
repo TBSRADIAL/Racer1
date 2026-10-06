@@ -1,0 +1,26 @@
+// ==========================================================================
+// Cards — tarjetas (.tarjeta) usadas en escuderías, FAQ, sobre y contacto
+// ==========================================================================
+
+@use "../utilities/variables" as *;
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    background-color: $color-superficie;
+    border-left: 4px solid $color-acento;
+    padding: 1.5rem;
+    outline: none;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+
+    &:hover,
+    &:focus {
+        transform: translateY(-4px);
+        border-color: $color-acento-claro;
+    }
+
+    &:active {
+        transform: translateY(-1px);
+    }
+}

@@ -1,0 +1,53 @@
+// ==========================================================================
+// Nav — navbar de Bootstrap personalizada con la paleta propia
+// ==========================================================================
+
+@use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.navbar.encabezado {
+    @include flex(row, space-between, center, 1rem);
+    flex-wrap: wrap;
+    padding: 1rem 2rem;
+    background-color: $color-superficie;
+    border-bottom: 3px solid $color-acento;
+
+    @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-link.enlace-menu {
+        color: $color-secundario;
+        font-family: $fuente-titulos;
+        font-weight: 600;
+        @include transicion(color);
+
+        &.active,
+        &:hover,
+        &:focus {
+            color: $color-acento;
+        }
+
+        &:active {
+            color: $color-acento-claro;
+        }
+    }
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    list-style: none;
+}
+
+.navbar-toggler {
+    border-color: $color-acento;
+    @include transicion(box-shadow);
+
+    &:focus {
+        box-shadow: 0 0 0 0.2rem rgba($color-acento, 0.5);
+    }
+}

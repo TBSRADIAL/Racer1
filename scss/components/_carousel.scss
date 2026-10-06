@@ -1,0 +1,25 @@
+// ==========================================================================
+// Carousel — personalización del carousel de Bootstrap
+// ==========================================================================
+
+@use "../utilities/variables" as *;
+
+.carousel-caption {
+    background-color: rgba($color-primario, 0.75);
+    border-radius: 4px;
+    padding: 1rem;
+
+    h3 {
+        font-family: $fuente-titulos;
+        font-size: 1.2rem;
+    }
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: $color-acento;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.6));
+}

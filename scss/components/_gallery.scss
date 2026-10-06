@@ -1,0 +1,23 @@
+// ==========================================================================
+// Gallery — figuras con imagen y pie de foto (.figura-galeria)
+// ==========================================================================
+
+@use "../utilities/variables" as *;
+
+.figura-galeria {
+    border: 1px solid $color-borde;
+    background-color: $color-superficie;
+}
+
+.imagen-galeria {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.pie-imagen {
+    padding: 1rem 1.25rem;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: $color-texto-suave;
+}
