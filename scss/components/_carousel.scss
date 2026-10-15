@@ -1,13 +1,28 @@
 // ==========================================================================
-// Carousel — personalización del carousel de Bootstrap
+// Carousel — personalización del carousel de Bootstrap (mobile-first)
 // ==========================================================================
 
 @use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
+
+.carousel-item img {
+    width: 100%;
+    aspect-ratio: 4 / 3;   // todas las diapositivas con la misma proporción
+    object-fit: cover;
+
+    @include desde(tablet) {
+        aspect-ratio: 3 / 2;
+    }
+
+    @include desde(desktop) {
+        aspect-ratio: 16 / 9;
+    }
+}
 
 .carousel-caption {
     background-color: rgba($color-primario, 0.75);
     border-radius: 4px;
-    padding: 1rem;
+    padding: $espacio-base;
 
     h3 {
         font-family: $fuente-titulos;

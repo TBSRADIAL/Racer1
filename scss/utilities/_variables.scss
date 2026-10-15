@@ -1,5 +1,5 @@
 // ==========================================================================
-// Variables — paleta de colores y tipografía de Racer 1
+// Variables — paleta, tipografía, espaciado, tiempos y breakpoints
 // ==========================================================================
 
 // Colores
@@ -15,3 +15,22 @@ $color-texto-oscuro: #14161A;
 // Tipografía
 $fuente-titulos: 'Titillium Web', sans-serif;
 $fuente-texto: 'Source Sans 3', sans-serif;
+
+// Escala de espaciado (operadores: todo nace de una sola base)
+$espacio-base: 1rem;
+$espacio-xs: $espacio-base * 0.6;   // 0.6rem
+$espacio-sm: $espacio-base * 1.2;   // 1.2rem
+$espacio-md: $espacio-base * 1.5;   // 1.5rem
+$espacio-lg: $espacio-base * 2;     // 2rem
+$espacio-xl: $espacio-base * 2.5;   // 2.5rem
+
+// Tiempos de animación
+$duracion-rapida: 0.15s;
+$duracion-normal: 0.2s;
+$duracion-lenta: $duracion-normal * 3;   // 0.6s
+
+// Breakpoints mobile-first (se usan con el mixin desde())
+$breakpoints: (
+    tablet: 768px,
+    desktop: 1024px
+);

@@ -25,3 +25,10 @@ a {
         text-decoration: underline;
     }
 }
+
+// Placeholder para @extend: lista sin viñetas en flex.
+// Lo extienden .menu (nav), .redes (footer) y .lista-destacados (components).
+%lista-limpia {
+    display: flex;
+    list-style: none;
+}

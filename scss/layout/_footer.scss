@@ -1,25 +1,32 @@
 // ==========================================================================
-// Footer — pie de página con copyright y redes sociales
+// Footer — pie de página con copyright y redes sociales (mobile-first)
 // ==========================================================================
 
+@use "../base/base";   // necesario para poder @extend el placeholder %lista-limpia
 @use "../utilities/variables" as *;
 @use "../utilities/mixins" as *;
 
 .pie-pagina {
-    @include flex(column, flex-start, center, 1rem);
-    margin-top: 1rem;
-    padding: 2rem;
+    @include flex(column, flex-start, center, $espacio-base);
+    margin-top: $espacio-base;
+    padding: $espacio-lg $espacio-base;
     background-color: $color-superficie;
     text-align: center;
+
+    @include desde(tablet) {
+        padding: $espacio-lg;
+    }
 
     .copyright {
         font-size: 0.9rem;
     }
 
     .redes {
-        @include flex(row, center, center, 1.2rem);
+        @extend %lista-limpia;
+        justify-content: center;
+        align-items: center;
         flex-wrap: wrap;
-        list-style: none;
+        gap: $espacio-sm;
     }
 
     .enlace-red {

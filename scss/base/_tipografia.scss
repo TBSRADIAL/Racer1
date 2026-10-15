@@ -1,21 +1,30 @@
 // ==========================================================================
-// Tipografía — clases de títulos y texto reutilizadas en las 5 páginas
+// Tipografía — clases de títulos y texto (mobile-first)
 // ==========================================================================
 
 @use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
 
 .titulo-seccion {
     font-family: $fuente-titulos;
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
 
-    @media (max-width: 600px) {
-        font-size: 1.4rem;
+    @include desde(tablet) {
+        font-size: 1.6rem;
+    }
+
+    @include desde(desktop) {
+        font-size: 1.8rem;
     }
 }
 
 .texto {
-    font-size: 1.05rem;
+    font-size: 1rem;
+
+    @include desde(tablet) {
+        font-size: 1.05rem;
+    }
 }
 
 .titulo-tarjeta {

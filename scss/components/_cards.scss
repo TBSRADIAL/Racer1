@@ -3,24 +3,17 @@
 // ==========================================================================
 
 @use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
 
 .tarjeta {
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
+    gap: $espacio-xs;
     background-color: $color-superficie;
     border-left: 4px solid $color-acento;
-    padding: 1.5rem;
+    padding: $espacio-md;
     outline: none;
-    transition: transform 0.2s ease, border-color 0.2s ease;
+    transition: transform $duracion-normal ease, border-color $duracion-normal ease;
 
-    &:hover,
-    &:focus {
-        transform: translateY(-4px);
-        border-color: $color-acento-claro;
-    }
-
-    &:active {
-        transform: translateY(-1px);
-    }
+    @include elevar;
 }

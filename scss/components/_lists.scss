@@ -2,16 +2,16 @@
 // Lists — lista de destacados (.lista-destacados)
 // ==========================================================================
 
+@use "../base/base";   // necesario para poder @extend el placeholder %lista-limpia
 @use "../utilities/variables" as *;
 
 .lista-destacados {
-    display: flex;
+    @extend %lista-limpia;
     flex-direction: column;
-    gap: 0.6rem;
-    list-style: none;
+    gap: $espacio-xs;
 }
 
 .item-destacado {
-    padding-left: 1.2rem;
+    padding-left: $espacio-sm;
     border-left: 3px solid $color-acento;
 }

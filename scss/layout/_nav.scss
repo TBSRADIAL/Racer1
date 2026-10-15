@@ -2,28 +2,50 @@
 // Nav — navbar de Bootstrap personalizada con la paleta propia
 // ==========================================================================
 
+@use "../base/base";   // necesario para poder @extend el placeholder %lista-limpia
 @use "../utilities/variables" as *;
 @use "../utilities/mixins" as *;
 
 .navbar.encabezado {
-    @include flex(row, space-between, center, 1rem);
+    @include flex(row, space-between, center, $espacio-base);
     flex-wrap: wrap;
-    padding: 1rem 2rem;
+    padding: $espacio-xs $espacio-base;
     background-color: $color-superficie;
     border-bottom: 3px solid $color-acento;
 
-    @media (max-width: 600px) {
-        flex-direction: column;
-        align-items: flex-start;
+    @include desde(tablet) {
+        padding: $espacio-base $espacio-md;
+    }
+
+    @include desde(desktop) {
+        padding: $espacio-base $espacio-lg;
     }
 
     .nav-link.enlace-menu {
+        position: relative;
         color: $color-secundario;
         font-family: $fuente-titulos;
         font-weight: 600;
         @include transicion(color);
 
-        &.active,
+        // Subrayado animado: crece desde la izquierda al interactuar
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0.2rem;
+            height: 2px;
+            background-color: $color-acento;
+            transform: scaleX(0);
+            transform-origin: left;
+            @include transicion(transform, 0.25s);
+        }
+
+        &.active {
+            color: $color-acento;
+        }
+
         &:hover,
         &:focus {
             color: $color-acento;
@@ -32,15 +54,20 @@
         &:active {
             color: $color-acento-claro;
         }
+
+        &.active::after,
+        &:hover::after,
+        &:focus::after {
+            transform: scaleX(1);
+        }
     }
 }
 
 .menu {
-    display: flex;
+    @extend %lista-limpia;
     align-items: center;
     flex-wrap: wrap;
-    gap: 1.2rem;
-    list-style: none;
+    gap: $espacio-sm;
 }
 
 .navbar-toggler {

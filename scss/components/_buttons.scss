@@ -11,10 +11,10 @@
     font-family: $fuente-titulos;
     font-weight: 600;
     border: none;
-    padding: 0.6rem 1.4rem;
-    margin-top: 1rem;
+    padding: $espacio-xs $espacio-base * 1.4;
+    margin-top: $espacio-base;
     text-decoration: none;
-    transition: background-color 0.2s ease, transform 0.15s ease;
+    transition: background-color $duracion-normal ease, transform $duracion-rapida ease;
 
     &:hover,
     &:focus {

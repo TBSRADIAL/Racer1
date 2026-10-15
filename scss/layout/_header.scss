@@ -1,12 +1,17 @@
 // ==========================================================================
-// Header — marca / logo
+// Header — marca / logo (mobile-first)
 // ==========================================================================
 
 @use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
 
 .navbar-brand.marca {
     font-family: $fuente-titulos;
     font-weight: 900;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: $color-secundario;
+
+    @include desde(tablet) {
+        font-size: 1.5rem;
+    }
 }

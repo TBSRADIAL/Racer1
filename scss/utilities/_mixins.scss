@@ -2,8 +2,12 @@
 // Mixins reutilizables
 // ==========================================================================
 
+@use "sass:map";
+@use "sass:math";
+@use "variables" as *;
+
 // Transición corta y consistente para estados :hover / :focus / :active
-@mixin transicion($propiedad: all, $duracion: 0.2s) {
+@mixin transicion($propiedad: all, $duracion: $duracion-normal) {
     transition: $propiedad $duracion ease;
 }
 
@@ -16,5 +20,36 @@
 
     @if $espacio {
         gap: $espacio;
+    }
+}
+
+// Media query mobile-first: @include desde(tablet) { ... }  →  @media (min-width: 768px)
+@mixin desde($punto) {
+    @if map.has-key($breakpoints, $punto) {
+        @media (min-width: map.get($breakpoints, $punto)) {
+            @content;
+        }
+    } @else {
+        @error "Breakpoint '#{$punto}' no existe. Opciones: #{map.keys($breakpoints)}";
+    }
+}
+
+// Animación @keyframes con parámetros; respeta a quien pide menos movimiento
+@mixin animar($nombre, $duracion: $duracion-lenta, $retraso: 0s, $timing: ease-out) {
+    @media (prefers-reduced-motion: no-preference) {
+        animation: $nombre $duracion $timing $retraso both;
+    }
+}
+
+// Estados hover/focus/active de una tarjeta que "se eleva" (operadores: * y math.div)
+@mixin elevar($distancia: 4px, $color-borde-hover: $color-acento-claro) {
+    &:hover,
+    &:focus {
+        transform: translateY($distancia * -1);
+        border-color: $color-borde-hover;
+    }
+
+    &:active {
+        transform: translateY(math.div($distancia * -1, 4));
     }
 }

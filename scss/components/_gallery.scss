@@ -3,20 +3,28 @@
 // ==========================================================================
 
 @use "../utilities/variables" as *;
+@use "../utilities/mixins" as *;
 
 .figura-galeria {
+    overflow: hidden;   // el zoom de la imagen no se sale del marco
     border: 1px solid $color-borde;
     background-color: $color-superficie;
+
+    // Zoom sutil de la foto al pasar el mouse o enfocar la tarjeta
+    &:hover .imagen-galeria {
+        transform: scale(1.04);
+    }
 }
 
 .imagen-galeria {
     width: 100%;
     height: auto;
     display: block;
+    @include transicion(transform, 0.4s);
 }
 
 .pie-imagen {
-    padding: 1rem 1.25rem;
+    padding: $espacio-base $espacio-base * 1.25;
     font-style: italic;
     font-size: 0.9rem;
     color: $color-texto-suave;
