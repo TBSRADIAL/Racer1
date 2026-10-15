@@ -14,6 +14,11 @@ https://tbsradial.github.io/Racer1/
 - **CSS3** — Flexbox, CSS Grid con `grid-template-areas`, transiciones y `@keyframes`
 - **Bootstrap 5.3.3** (vía CDN) — navbar responsiva con menú hamburguesa, carousel y grid system (`row` / `col-*`)
 - **AOS 2.3.4** (vía CDN) — animaciones de entrada al hacer scroll
+=======
+- **Sass / SCSS** — arquitectura de partials, variables, mixins, nesting y el operador `&`, compilado a un único `css/style.css`
+- **CSS3** — Flexbox y CSS Grid con Media Queries (mobile-first)
+- **Bootstrap 5.3.3** (vía CDN) — navbar responsiva con menú hamburguesa, carousel de imágenes y grid system (`row`/`col-*`)
+- **Bootstrap Icons** — iconografía de la interfaz
 - **Google Fonts** — `Titillium Web` (títulos) y `Source Sans 3` (texto)
 
 ## Estructura del proyecto
@@ -28,12 +33,22 @@ racer1/
 │   │   └── _mixins.scss           # transicion(), flex(), desde(), animar(), elevar()
 │   ├── base/
 │   │   ├── _base.scss             # Reset, estilos globales y placeholder %lista-limpia
+=======
+├── scss/                        # Código fuente de los estilos (no se linkea directo)
+│   ├── main.scss                 # Punto de entrada único (@use)
+│   ├── utilities/
+│   │   ├── _variables.scss        # Paleta de colores y tipografía
+│   │   └── _mixins.scss           # transicion() y flex()
+│   ├── base/
+│   │   ├── _base.scss             # Reset + estilos globales a etiquetas
 │   │   └── _tipografia.scss       # Clases de títulos y texto
 │   ├── layout/
 │   │   ├── _header.scss           # Marca / logo
 │   │   ├── _nav.scss              # Navbar de Bootstrap personalizada
 │   │   ├── _footer.scss           # Pie de página y redes sociales
 │   │   └── _contenido.scss        # Contenedor principal, CSS Grid y animación de entrada
+=======
+│   │   └── _contenido.scss        # Contenedor principal + CSS Grid
 │   └── components/
 │       ├── _buttons.scss
 │       ├── _cards.scss
@@ -88,6 +103,12 @@ racer1/
 | Mixins `transicion()` y `flex()` | Transiciones y contenedores flex reutilizables |
 | `@extend` | El placeholder `%lista-limpia` lo extienden `.menu`, `.redes` y `.lista-destacados` |
 | Nesting y `&` | En todos los partials (estados, variantes `&--equipos`, pseudo-elementos) |
+=======
+- **Carousel de Bootstrap** como galería de imágenes en `index.html` y `Pages/escuderias.html`.
+- **Paleta de colores propia** (asfalto, morado "vuelta rápida" y ámbar de bandera de precaución), definida como variables de Sass y aplicada por encima de los estilos por defecto de Bootstrap.
+- **Estados interactivos** (`:hover`, `:focus`, `:active`) con `transition` en enlaces, botones y tarjetas.
+- Sin IDs usados para estilos (solo clases); sin `!important`; sin estilos en línea.
+- **Cero CSS escrito a mano**: todo el estilo propio nace en `.scss` y se compila a `css/style.css`.
 
 ## Cómo correrlo localmente
 
@@ -112,6 +133,21 @@ sass scss/main.scss css/style.css --no-source-map
 ```
 
 ⚠️ El `css/style.css` compilado se sube al repositorio junto con los `.scss`: GitHub Pages no compila Sass por sí solo, solo sirve archivos estáticos.
+
+## Cómo editar los estilos
+
+El `css/style.css` **no se edita a mano** — es el resultado de compilar `scss/main.scss`.
+
+**Opción A — VS Code (recomendada):**
+Con la extensión Live Sass Compiler instalada, clic en "Watch Sass" en la barra inferior. Cada vez que guardes un archivo `.scss`, se regenera `css/style.css` automáticamente.
+
+**Opción B — Terminal:**
+```bash
+npm install -g sass
+sass scss/main.scss css/style.css --no-source-map
+```
+
+⚠️ El `css/style.css` compilado se sube al repositorio junto con los `.scss` — GitHub Pages no compila Sass por sí solo, solo sirve archivos estáticos.
 
 ## Autor
 
