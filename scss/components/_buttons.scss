@@ -6,7 +6,8 @@
 
 .btn-boton {
     display: inline-block;
-    background-color: $color-acento;
+    align-self: flex-start;   // dentro de una sección flex no se estira a todo el ancho
+    background-color: $color-acento-texto;   // texto oscuro sobre este fondo: 6.7:1
     color: $color-texto-oscuro;
     font-family: $fuente-titulos;
     font-weight: 600;
@@ -18,7 +19,7 @@
 
     &:hover,
     &:focus {
-        background-color: $color-acento-claro;
+        background-color: $color-acento-texto-hover;
         color: $color-texto-oscuro;
     }
 

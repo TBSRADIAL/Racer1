@@ -18,12 +18,48 @@ body {
 }
 
 a {
-    color: $color-acento;
+    color: $color-acento-texto;
     text-decoration: none;
 
     &:hover {
+        color: $color-acento-texto-hover;
         text-decoration: underline;
     }
+}
+
+// Los enlaces dentro de un párrafo van subrayados: así no dependen solo del color
+.texto a {
+    text-decoration: underline;
+}
+
+// Foco visible para quien navega con teclado
+:focus-visible {
+    outline: 3px solid $color-acento-texto;
+    outline-offset: 2px;
+}
+
+// Enlace "Saltar al contenido principal": oculto hasta que recibe el foco con Tab
+.saltar-contenido {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1100;
+    padding: $espacio-xs $espacio-base;
+    background-color: $color-acento-texto;
+    color: $color-texto-oscuro;
+    font-weight: 600;
+    transform: translateY(-120%);
+
+    &:focus {
+        transform: none;
+        color: $color-texto-oscuro;
+    }
+}
+
+// <address> se usa en contacto: sin cursiva ni margen por defecto
+address {
+    font-style: normal;
+    margin-bottom: 0;
 }
 
 // Placeholder para @extend: lista sin viñetas en flex.

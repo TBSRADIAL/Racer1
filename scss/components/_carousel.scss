@@ -7,6 +7,7 @@
 
 .carousel-item img {
     width: 100%;
+    height: auto;          // el atributo height del HTML (anti-saltos de diseño) no debe fijar la altura
     aspect-ratio: 4 / 3;   // todas las diapositivas con la misma proporción
     object-fit: cover;
 

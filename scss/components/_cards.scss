@@ -17,3 +17,31 @@
 
     @include elevar;
 }
+
+// Sección con tarjetas en CSS Grid (sin <div class="row"> ni <div class="col"> de Bootstrap):
+// las <article> son hijas directas de la <section> y el <h2> ocupa toda la fila.
+.seccion.seccion--tarjetas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $espacio-md;
+
+    > .titulo-seccion {
+        grid-column: 1 / -1;
+    }
+
+    @include desde(tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: start;
+    }
+}
+
+// En escuderías, las 3 tarjetas van en una sola fila en escritorio
+.layout-grid--equipos .seccion--tarjetas {
+    @include desde(desktop) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.tarjeta .figura-galeria {
+    margin-bottom: 0;
+}

@@ -43,16 +43,16 @@
         }
 
         &.active {
-            color: $color-acento;
+            color: $color-acento-texto;
         }
 
         &:hover,
         &:focus {
-            color: $color-acento;
+            color: $color-acento-texto;
         }
 
         &:active {
-            color: $color-acento-claro;
+            color: $color-acento-texto-hover;
         }
 
         &.active::after,

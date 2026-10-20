@@ -11,7 +11,14 @@
     background-color: $color-superficie;
 
     // Zoom sutil de la foto al pasar el mouse o enfocar la tarjeta
-    &:hover .imagen-galeria {
+    &:hover // Fotos verticales: se limitan de ancho para que no ocupen toda la pantalla
+.figura-galeria--vertical {
+    width: 100%;
+    max-width: 420px;
+    margin-inline: auto;
+}
+
+.imagen-galeria {
         transform: scale(1.04);
     }
 }

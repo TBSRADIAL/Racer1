@@ -12,6 +12,12 @@ $color-acento: #8B5CF6;
 $color-acento-claro: #A377FF;
 $color-texto-oscuro: #14161A;
 
+// Acento para TEXTO (accesibilidad WCAG 2.1 AA, mínimo 4.5:1).
+// $color-acento (#8B5CF6) solo da 3.9:1 sobre el fondo y 3.5:1 sobre las tarjetas,
+// así que queda para bordes y detalles decorativos; todo texto morado usa estos tonos:
+$color-acento-texto: #A78BFA;        // 6.1:1 sobre $color-primario · 5.5:1 sobre $color-superficie
+$color-acento-texto-hover: #C4B5FD;  // más claro = aún más contraste en :hover / :focus
+
 // Tipografía
 $fuente-titulos: 'Titillium Web', sans-serif;
 $fuente-texto: 'Source Sans 3', sans-serif;
@@ -34,3 +40,4 @@ $breakpoints: (
     tablet: 768px,
     desktop: 1024px
 );
+
