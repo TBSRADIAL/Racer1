@@ -67,7 +67,13 @@
     @extend %lista-limpia;
     align-items: center;
     flex-wrap: wrap;
-    gap: $espacio-sm;
+    gap: 0;                        // menú hamburguesa abierto (mobile/tablet): enlaces apilados y compactos
+    padding-top: $espacio-xs;
+
+    @include desde(menu-horizontal) {
+        gap: $espacio-sm;          // menú horizontal: separación entre enlaces
+        padding-top: 0;
+    }
 }
 
 .navbar-toggler {

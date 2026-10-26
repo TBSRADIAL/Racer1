@@ -38,6 +38,7 @@ $duracion-lenta: $duracion-normal * 3;   // 0.6s
 // Breakpoints mobile-first (se usan con el mixin desde())
 $breakpoints: (
     tablet: 768px,
+    menu-horizontal: 992px,   // coincide con navbar-expand-lg de Bootstrap: el menú deja de ser hamburguesa
     desktop: 1024px
 );
 

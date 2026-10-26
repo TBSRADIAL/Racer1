@@ -5,6 +5,12 @@
 @use "../utilities/variables" as *;
 @use "../utilities/mixins" as *;
 
+// Cada diapositiva es un <figure> (imagen + <figcaption>): se quita el margen
+// que Bootstrap le da por defecto a las figuras
+.carousel-item {
+    margin: 0;
+}
+
 .carousel-item img {
     width: 100%;
     height: auto;          // el atributo height del HTML (anti-saltos de diseño) no debe fijar la altura

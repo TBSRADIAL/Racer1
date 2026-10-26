@@ -14,5 +14,10 @@
 .item-destacado {
     padding-left: $espacio-sm;
     border-left: 3px solid $color-acento;
+
+    // Enlaces internos dentro de la lista: subrayados para no depender solo del color
+    a {
+        text-decoration: underline;
+    }
 }
 

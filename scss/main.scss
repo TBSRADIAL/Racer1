@@ -1,5 +1,6 @@
 // ==========================================================================
-// RACER 1 — Punto de entrada único (compila a css/style.css)
+// RACER 1 — Punto de entrada único (compila a styles/main.css)
+// Este archivo NO lleva estilos: solo importa los partials con @use.
 // ==========================================================================
 
 @use "utilities/variables" as *;

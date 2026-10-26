@@ -1,81 +1,85 @@
 # Racer 1 🏎️
 
-Sitio informativo sobre el mundo de la Fórmula 1: escuderías, reglamento, calendario y curiosidades para quienes se inician en el deporte.
+Guía de Fórmula 1 en español: escuderías, reglamento, Grandes Premios y preguntas frecuentes para quienes se inician en el deporte.
 
-## Demo
+## 🔗 Sitio publicado
 
-Una vez publicado con GitHub Pages, el sitio queda disponible en:
-https://tbsradial.github.io/Racer1/
+**Link del sitio:** https://proyecto-self-ten.vercel.app
+
+Repositorio: https://github.com/TBSRADIAL/Racer1
 
 ## Tecnologías utilizadas
 
-- **HTML5** — estructura semántica (`header`, `nav`, `main`, `section`, `article`, `figure`, `address`, `footer`)
-- **Sass / SCSS** — arquitectura de partials, variables, mixins con parámetros, `@extend`, operadores, nesting y el operador `&`; se compila a un único `css/style.css`
-- **CSS3** — Flexbox, CSS Grid con `grid-template-areas`, transiciones y `@keyframes`, mobile-first
-- **Bootstrap 5.3.3** (vía CDN) — navbar responsiva con menú hamburguesa y carousel
-- **AOS 2.3.4** (vía CDN) — animaciones de entrada al hacer scroll
-- **Google Fonts** — `Titillium Web` (títulos) y `Source Sans 3` (texto)
+- **HTML5**: estructura semántica (`header`, `nav`, `main`, `section`, `article`, `figure`, `figcaption`, `address`, `footer`)
+- **Sass / SCSS**: partials, variables, mixins con parámetros, `@extend`, operadores, nesting y el operador `&`; se compila a un único `styles/main.css`
+- **CSS3**: Flexbox, CSS Grid con `grid-template-areas`, media queries mobile-first, transiciones y `@keyframes`
+- **Bootstrap 5.3.3** (vía CDN): navbar responsiva con menú hamburguesa y carousel
+- **AOS 2.3.4** (vía CDN): animaciones de entrada al hacer scroll
+- **Google Fonts**: `Titillium Web` (títulos) y `Source Sans 3` (texto)
 
 ## Estructura del proyecto
 
 ```
 racer1/
-├── index.html                          # Página de inicio
-├── paginas/
+├── index.html                           # Página de inicio (raíz)
+├── pages/
 │   ├── sobre-nosotros.html
-│   ├── escuderias-formula-1.html        # Con carousel
+│   ├── escuderias-formula-1.html         # Con carousel
 │   ├── preguntas-frecuentes-f1.html
 │   └── contacto.html
-├── scss/                               # Código fuente de los estilos (no se enlaza directo)
-│   ├── main.scss                        # Punto de entrada único (@use)
+├── scss/                                # Código fuente de los estilos
+│   ├── main.scss                         # Solo importa los partials con @use (no tiene estilos)
 │   ├── utilities/
-│   │   ├── _variables.scss               # Colores (incluye tonos accesibles), tipografía, espaciado, tiempos y breakpoints
-│   │   └── _mixins.scss                  # transicion(), flex(), desde(), animar(), elevar()
+│   │   ├── _variables.scss                # Colores, tipografía, espaciado, tiempos y breakpoints
+│   │   └── _mixins.scss                   # transicion(), flex(), desde(), animar(), elevar()
 │   ├── base/
-│   │   ├── _base.scss                    # Reset, estilos globales, foco visible, enlace "saltar al contenido"
-│   │   └── _tipografia.scss              # Clases de títulos y texto
+│   │   ├── _base.scss                     # Reset, estilos globales, foco visible, placeholder %lista-limpia
+│   │   └── _tipografia.scss               # Clases de títulos y texto
 │   ├── layout/
-│   │   ├── _header.scss                  # Marca / logo
-│   │   ├── _nav.scss                     # Navbar de Bootstrap personalizada
-│   │   ├── _footer.scss                  # Pie de página y redes sociales
-│   │   └── _contenido.scss               # Contenedor principal, CSS Grid y animación de entrada
+│   │   ├── _header.scss                   # Marca / logo
+│   │   ├── _nav.scss                      # Navbar de Bootstrap personalizada
+│   │   ├── _footer.scss                   # Pie de página y redes sociales
+│   │   └── _contenido.scss                # Contenedor principal, CSS Grid y animación de entrada
 │   └── components/
 │       ├── _buttons.scss
-│       ├── _cards.scss                   # Tarjetas + sección de tarjetas en CSS Grid
+│       ├── _cards.scss                    # Tarjetas + secciones de tarjetas en CSS Grid
 │       ├── _lists.scss
 │       ├── _gallery.scss
 │       └── _carousel.scss
-├── css/
-│   └── style.css                        # CSS compilado (el que enlazan los HTML)
-└── img/                                # Imágenes con nombres descriptivos
-    ├── favicon-racer1.png
-    ├── scuderia-ferrari-escudo-cavallino.jpg
-    ├── red-bull-racing-monoplaza-en-pista.jpg
-    └── ...
+├── styles/
+│   └── main.css                          # CSS compilado (el que enlazan los HTML)
+├── assets/                              # Imágenes e íconos con nombres descriptivos
+│   ├── favicon-racer1.png
+│   ├── scuderia-ferrari-escudo-cavallino.jpg
+│   ├── pit-lane-vista-aerea-paradas-boxes.jpg
+│   └── ...
+└── .vscode/
+    └── settings.json                     # Live Sass Compiler: compila a /styles
 ```
 
 ## SEO on-page
 
+Cada página tiene un `<title>`, una `meta description` y unas `meta keywords` únicas, escritas según su contenido. Las keywords también aparecen en el `<h1>`, los `<h2>` y el texto, sin repetirse de más.
+
 | Página | `<title>` | Keywords principales |
 |---|---|---|
-| `index.html` | Fórmula 1: escuderías, pilotos y reglamento explicados | Fórmula 1, F1, escuderías, pilotos, Gran Premio, reglamento |
-| `sobre-nosotros.html` | Sobre nosotros: una guía de Fórmula 1 para principiantes | guía de Fórmula 1, principiantes, aprender F1 |
-| `escuderias-formula-1.html` | Escuderías de Fórmula 1: Ferrari, Mercedes, Red Bull y más | escuderías de Fórmula 1, equipos de F1, Ferrari, Mercedes, Red Bull, McLaren, Audi, Cadillac |
-| `preguntas-frecuentes-f1.html` | Preguntas frecuentes sobre la Fórmula 1 y su reglamento | preguntas frecuentes F1, reglamento, parrilla de salida, paradas en boxes, puntos |
-| `contacto.html` | Contacto: escribe a Racer 1, tu guía de Fórmula 1 | contacto Racer 1, Fórmula 1 |
+| `index.html` | Guía de Fórmula 1 en español: escuderías y pilotos | Fórmula 1, F1, guía de Fórmula 1 en español, escuderías, pilotos, reglamento |
+| `sobre-nosotros.html` | Quiénes somos: aprende Fórmula 1 desde cero con Racer 1 | aprender Fórmula 1 desde cero, Fórmula 1 para principiantes, historia de la F1 |
+| `escuderias-formula-1.html` | Escuderías de F1: historia de Ferrari, Mercedes y Red Bull | escuderías de Fórmula 1, Ferrari, Mercedes-AMG, Red Bull Racing, McLaren, Audi, Cadillac |
+| `preguntas-frecuentes-f1.html` | Preguntas frecuentes de F1: puntos y paradas en boxes | vueltas de una carrera, parrilla de salida, puntos del campeonato, paradas en boxes |
+| `contacto.html` | Contacto: Racer 1, guía de Fórmula 1 desde Ciudad de México | contacto Racer 1, Fórmula 1 en Ciudad de México, F1 México |
 
-- **`meta description` propia en cada página**, escrita según su contenido (entre 140 y 180 caracteres).
-- **Keywords integradas** en el `<title>`, el `<h1>`, los `<h2>` y el texto, sin repetirlas de más. No se usa `meta keywords` porque Google no la tiene en cuenta.
-- **Un solo `<h1>` por página** y jerarquía ordenada `h1 → h2 → h3`. Los títulos genéricos ("Galería", "Garaje", "Paddock") se reemplazaron por títulos descriptivos.
-- **HTML semántico, sin contenedores genéricos innecesarios:** las tarjetas son `<article>` hijas directas de su `<section>` (se quitaron los `<div class="row">` y `<div class="col">`), los datos de contacto usan `<address>` y los párrafos sueltos ya no van envueltos en `<article>`.
-- **Nombres de archivo descriptivos** en minúsculas, con guiones y sin espacios: carpetas `img/` y `paginas/`, páginas como `escuderias-formula-1.html` e imágenes como `pit-lane-vista-aerea-paradas-boxes.jpg`.
-- **Imágenes optimizadas:** redimensionadas a 1600 px como máximo (de ~31 MB a ~2 MB en total), con `width`/`height` para evitar saltos de diseño y `loading="lazy"` en las que no se ven al cargar.
-- **Textos de enlace descriptivos** ("Conoce más sobre Racer 1" en lugar de "Conoce más").
+- **Encabezados específicos:** un solo `<h1>` por página y jerarquía `h1 → h2 → h3`. Ningún título es genérico: en lugar de "Galería" o "Datos de contacto", se usan títulos como "McLaren, Audi y Cadillac en la parrilla de la F1 2026" o "Correo y ubicación de Racer 1 en Ciudad de México".
+- **SEO local:** la página de contacto incluye Ciudad de México en el título, la descripción, el `<h1>` y los datos de `<address>`.
+- **HTML semántico, sin contenedores genéricos innecesarios:** las tarjetas son `<article>` hijas directas de su `<section>`, cada diapositiva del carousel es un `<figure>` con `<figcaption>` y los datos de contacto usan `<address>`. Los únicos `<div>` que quedan son los que Bootstrap necesita para la navbar y el carousel.
+- **Enlaces internos** entre páginas con textos descriptivos ("Historia de las escuderías de Fórmula 1").
+- **Nombres de archivo descriptivos** en minúsculas, con guiones y sin espacios.
+- **Imágenes optimizadas:** de máximo 1600 px de ancho, con `width`/`height` para evitar saltos de diseño y `loading="lazy"` en las que no se ven al cargar.
 
 ## Accesibilidad
 
 - **`alt` descriptivo en todas las imágenes**, distinto del `figcaption` para no repetir información.
-- **Contraste WCAG 2.1 AA (mínimo 4.5:1 para texto):** el morado original `#8B5CF6` solo llegaba a 3.9:1 sobre el fondo y 3.5:1 sobre las tarjetas. Ahora todo texto morado (enlaces, títulos de tarjeta, menú activo, botón) usa `#A78BFA` (6.1:1 y 5.5:1) y `#C4B5FD` en `:hover`; el morado original queda solo para bordes decorativos.
+- **Contraste WCAG 2.1 AA** (mínimo 4.5:1 para texto). Todo texto morado usa `#A78BFA`; el morado original `#8B5CF6` queda solo para bordes decorativos.
 
   | Combinación | Contraste |
   |---|---|
@@ -85,49 +89,76 @@ racer1/
   | Morado de texto `#A78BFA` sobre fondo / tarjeta | 6.1:1 / 5.5:1 |
   | Texto oscuro `#14161A` sobre botón `#A78BFA` | 6.7:1 |
 
-- **Enlace "Saltar al contenido principal"**, visible al navegar con Tab.
+- Enlace **"Saltar al contenido principal"**, visible al navegar con Tab.
 - **Foco visible** (`:focus-visible`) en todos los elementos interactivos.
-- **`aria-label`** en la navegación principal, la de redes sociales y los carruseles; los botones de los carruseles indican qué foto muestran.
+- **`aria-label`** en la navegación principal, la de redes sociales y los carruseles.
 - Los enlaces externos avisan a los lectores de pantalla que se abren en una pestaña nueva.
-- Se quitó `tabindex="0"` de las tarjetas: no son interactivas, así que no deben recibir el foco.
-- Se respeta "reducir movimiento" (`prefers-reduced-motion`) en AOS y en la animación de entrada.
 
-## SCSS avanzado
+## Responsive
+
+El sitio es mobile-first y se adapta con media queries generadas por el mixin `desde()`:
+
+| Breakpoint | Qué cambia |
+|---|---|
+| Base (celular, sin media query) | Una columna, menú hamburguesa, carousel en 4:3 |
+| `tablet` (768 px) | Tarjetas en 2 columnas, carousel en 3:2, más espaciado |
+| `menu-horizontal` (992 px) | La navbar de Bootstrap pasa de hamburguesa a menú horizontal |
+| `desktop` (1024 px) | Grid de 2 columnas, tarjetas de escuderías en 3 columnas, carousel en 16:9 |
+
+Probado a 360, 768, 1024 y 1440 px en las 5 páginas, sin scroll horizontal.
+
+## Animaciones
+
+**Nativas (SCSS):**
+- `@keyframes aparecer`: entrada suave del primer bloque de cada página.
+- `transition`: subrayado animado en los links del navbar, zoom de las fotos al pasar el mouse y tarjetas que se elevan en `:hover` y `:focus`.
+
+**Con librería (AOS):** secciones y tarjetas aparecen con `fade-up` al hacer scroll.
+
+Las dos respetan la preferencia del sistema "reducir movimiento" (`prefers-reduced-motion`).
+
+## SCSS
 
 | Herramienta | Dónde |
 |---|---|
-| Variables | `utilities/_variables.scss` (colores, fuentes, espaciado, tiempos, breakpoints) |
-| Operadores | La escala de espaciado se calcula con `$espacio-base * 1.5`, etc.; el mixin `elevar()` usa `*` y `math.div` |
+| Partials | `utilities/`, `base/`, `layout/` y `components/`, importados en `main.scss` solo con `@use` |
+| Variables | `utilities/_variables.scss` (colores, fuentes, espaciado, tiempos y mapa de breakpoints) |
+| Operadores | Escala de espaciado (`$espacio-base * 1.5`, etc.); el mixin `elevar()` usa `*` y `math.div` |
 | Mixin `desde($punto)` | Media queries mobile-first: `@include desde(tablet) { ... }` |
 | Mixin `animar($nombre, $duracion, $retraso, $timing)` | Aplica una animación respetando `prefers-reduced-motion` |
 | Mixin `elevar($distancia, $color-borde-hover)` | Efecto de elevación en `:hover`, `:focus` y `:active` |
-| Mixins `transicion()` y `flex()` | Transiciones y contenedores flex reutilizables |
+| Mixins `transicion($propiedad, $duracion)` y `flex($direccion, $justificar, $alinear, $espacio)` | Transiciones y contenedores flex reutilizables |
 | `@extend` | El placeholder `%lista-limpia` lo extienden `.menu`, `.redes` y `.lista-destacados` |
-| Nesting y `&` | En todos los partials (estados, variantes `&--equipos`, pseudo-elementos) |
+| Nesting y `&` | En todos los partials (estados, variantes `&--vertical`, `&--equipos`, pseudo-elementos) |
 
 ## Cómo correrlo localmente
 
 1. Clona este repositorio.
 2. Abre la carpeta en Visual Studio Code.
-3. Instala la extensión **Live Server** (para ver el sitio) y **Live Sass Compiler** (para editar los estilos).
+3. Instala las extensiones **Live Server** (para ver el sitio) y **Live Sass Compiler** (para editar los estilos).
 4. Clic derecho sobre `index.html` → **Open with Live Server**.
 
 No requiere instalar dependencias: Bootstrap, AOS y las fuentes se cargan vía CDN.
 
 ## Cómo editar los estilos
 
-El `css/style.css` **no se edita a mano**: es el resultado de compilar `scss/main.scss`.
+El `styles/main.css` **no se edita a mano**: es el resultado de compilar `scss/main.scss`.
 
-**Opción A — VS Code (recomendada):**
-Con la extensión Live Sass Compiler instalada, clic en "Watch Sass" en la barra inferior. Cada vez que guardes un archivo `.scss`, se regenera `css/style.css` automáticamente.
+**Opción A: VS Code (recomendada).** El archivo `.vscode/settings.json` ya configura Live Sass Compiler para guardar el CSS en `/styles`. Haz clic en "Watch Sass" en la barra inferior y, cada vez que guardes un `.scss`, se regenera `styles/main.css`.
 
-**Opción B — Terminal:**
+**Opción B: terminal.**
 ```bash
 npm install -g sass
-sass scss/main.scss css/style.css --no-source-map
+sass scss/main.scss styles/main.css --no-source-map
 ```
 
-⚠️ El `css/style.css` compilado se sube al repositorio junto con los `.scss`: GitHub Pages no compila Sass por sí solo, solo sirve archivos estáticos.
+⚠️ El `styles/main.css` compilado se sube al repositorio junto con los `.scss`, porque Netlify y Vercel sirven archivos estáticos y no compilan Sass por sí solos.
+
+## Cómo desplegarlo
+
+**Netlify:** en app.netlify.com → *Add new site* → *Import an existing project* → GitHub → elegir `Racer1`. Dejar vacíos el *Build command* y el *Publish directory* y hacer clic en *Deploy*.
+
+**Vercel:** en vercel.com → *Add New…* → *Project* → importar `Racer1` desde GitHub. En *Framework Preset* elegir *Other*, sin comando de build, y hacer clic en *Deploy*.
 
 ## Autor
 
